@@ -17,7 +17,7 @@ client.on('interactionCreate', (interaction) => {
 
       const cmd = client.slashCommands.get(interaction.commandName);
 
-      if (!cmd) return interaction.reply(`Error`);
+      if (!cmd) return interaction.reply(`Ocorreu um erro de interação fantasma. Se houver, desligue outras instancias que estou ligad@`);
 
       interaction["member"] = interaction.guild.members.cache.get(interaction.user.id);
 

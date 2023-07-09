@@ -2,12 +2,12 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: "emoji-info",
-    description: 'Veja informações do emoji.',
+    description: '[Informações] Veja informações do emoji.',
     type: Discord.ApplicationCommandType.ChatInput,
     options: [
         {
             name: "emoji",
-            description: "[Informações] Selecione o emoji",
+            description: "Selecione o emoji",
             type: Discord.ApplicationCommandOptionType.String,
             required: true,
         }

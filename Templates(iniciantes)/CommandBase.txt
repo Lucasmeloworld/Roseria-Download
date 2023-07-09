@@ -1,0 +1,22 @@
+const Discord = require('discord.js')
+
+module.exports = {
+
+    name: "", 
+    description: "", 
+    type: Discord.ApplicationCommandType.ChatInput,
+    options: [
+        
+        {
+            name: "",
+            description: "",
+            type: Discord.ApplicationCommandOptionType.String,
+            required: true,
+        }
+    ],
+    run: async (client, interaction) => {
+
+    interaction.reply({ });
+
+    }
+} 

@@ -1,0 +1,41 @@
+Roseria é um projeto de BOT de Diversão e Moderação, porém nem tudo dura para sempre?
+
+Como ligar o BOT:
+
+Inserir o Token de BOT em config.json
+
+instalar dependencias
+
+Contato:
+lucasmeloworld (Discord)
+Suporte Roseria (Servidor de Discord)
+https://discord.gg/gJ4BYhTPBN
+
+Achou algum erro? Me contate ou abra uma Issue!
+
+Os varios comandos tem "Rose" e/ou "Roseria" se quiser, pode alterar sem medo. 
+
+Aproveite as funções que ela possui!
+
+Comandos incluidos:
+
+Config
+lock, unlock
+
+Diversão
+8ball, dado, escolha, faustao, gifsAleatorias, HugV2, KissV2, slapV2, Processo, letraRandom
+
+Economia
+bet, daily, RoseriaBuy, RoseriaInventory, RoseriaShop, Wallet, Work
+
+Info
+Emoji-info, info, ping, severIcon, serverInfo, userInfo,
+
+Moderação
+Ban, Kick, Mute, unBan, unMute
+
+Outros
+Calculadora, invite, mensagem, say, sayEmbed
+
+Perfil
+ProfileSettings, ViewProfile

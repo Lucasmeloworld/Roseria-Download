@@ -19,7 +19,7 @@ function criarPerfil(userId) {
 
 module.exports = {
     name: "perfil",
-    description: "Visualize o perfil de um usuário.",
+    description: "[Perfil] Visualize o perfil de um usuário.",
     type: Discord.ApplicationCommandType.ChatInput,
     options: [
         {
@@ -30,6 +30,8 @@ module.exports = {
         },
     ],
     run: async (client, interaction) => {
+        interaction.reply(`📁 | Procurando Perfil...`).then(()=>{
+            setTimeout(()=>{
         const targetUser = interaction.options.getUser("usuário") || interaction.user;
         const targetUserId = targetUser.id;
 
@@ -53,6 +55,11 @@ module.exports = {
         .setThumbnail(dadosPerfil.small_image || targetUser.displayAvatarURL())
         .setColor(dadosPerfil.embed_color || 'ffffff');
 
-        interaction.reply({ embeds: [embed] });
+        interaction.editReply({ embeds: [embed], content: '' }).catch(error => {
+            console.error(error);
+            interaction.editReply(`❌ | Me desculpe, não consegui visualizar seu perfil...`);
+          });
+}, 3500)
+    })
     }
 }

@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: "loja",
-    description: "Veja a Loja atual da Roseria.",
+    description: "[Economia] Veja a Loja atual da Roseria.",
     type: Discord.ApplicationCommandType.ChatInput,
     options: [
         {
@@ -45,7 +45,7 @@ module.exports = {
             .setDescription("🔹 | Perfil\n🔸 | Veja os itens disponíveis:")
             .setColor('Yellow')
             .addFields(
-                { name: '💠 | Emoji decorativo (Perfil)', value: 'Decoração para perfil\n`500 RoseCredits`', inline: false },
+                { name: '💠 | Emojis decorativos (Perfil)', value: 'Decoração para perfil\n`500 RoseCredits`', inline: false },
                 { name: '🎀 | Fita colorida (Perfil)', value: 'Decoração para perfil\n`650 RoseCredits`', inline: false },
                 { name: '📌 | Foto pequena (Perfil)', value: 'Decoração para perfil\n`400 RoseCredits`', inline: false },
                 { name: '📌 | Foto grande (Perfil)', value: 'Decoração para perfil\n`700 RoseCredits`', inline: false },

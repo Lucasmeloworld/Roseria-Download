@@ -17,7 +17,7 @@ module.exports = db;
 //COMANDO DE CARTEIRA
 module.exports = {
     name: "carteira",
-    description: "Mostra o saldo da carteira",
+    description: "[Economia] Mostra o saldo da carteira",
     type: Discord.ApplicationCommandType.ChatInput,
     options: [
         {

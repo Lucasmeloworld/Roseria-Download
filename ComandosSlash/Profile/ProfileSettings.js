@@ -91,7 +91,7 @@ function salvarDadosPerfil(usuarioId, aboutMe, emoji, embedColor, smallImage, bi
 
 module.exports = {
     name: "personalizar-perfil",
-    description: "Modifique seu perfil Roseria.",
+    description: "[Perfil] Modifique seu perfil Roseria.",
     type: Discord.ApplicationCommandType.ChatInput,
     options: [
         {
@@ -152,6 +152,9 @@ module.exports = {
         },
     ],
     run: async (client, interaction) => {
+        interaction.reply(`📁 | Procurando o perfil...`).then(()=>{
+            setTimeout(()=>{
+        
         const userId = interaction.user.id;
         const aboutMe = interaction.options.getString("about-me");
         const emoji = interaction.options.getString("emoji");
@@ -160,36 +163,37 @@ module.exports = {
         const bigImage = interaction.options.getString("big-image");
 
         // Verificar se o usuário possui o item "💠 | Emoji decorativo「Perfil」"
-        const temEmojiDecorativo = obterCompras(userId).includes("💠 | Emoji decorativo「Perfil」");
+        const temEmojiDecorativo = obterCompras(userId).includes("💠 | Emojis decorativos「Perfil」");
         if (!temEmojiDecorativo && emoji) {
-            interaction.reply("Você precisa comprar o item \"💠 | Emoji decorativo「Perfil」\" antes de poder utilizá-lo.");
+            interaction.editReply("Você precisa comprar o item \"💠 | Emojis decorativos「Perfil」\" antes de poder utilizá-lo.");
             return;
         }
 
         // Verificar se o usuário possui o item "🎀 | Fita colorida「Perfil」"
         const temFitaColorida = obterCompras(userId).includes("🎀 | Fita colorida「Perfil」");
         if (!temFitaColorida && embedColor) {
-            interaction.reply("Você precisa comprar o item \"🎀 | Fita colorida「Perfil」\" antes de poder utilizá-lo.");
+            interaction.editReply("Você precisa comprar o item \"🎀 | Fita colorida「Perfil」\" antes de poder utilizá-lo.");
             return;
         }
 
         // Verificar se o usuário possui o item "📌 | Foto pequena「Perfil」"
         const temFotoPequena = obterCompras(userId).includes("📌 | Foto pequena「Perfil」");
         if (!temFotoPequena && smallImage) {
-            interaction.reply("Você precisa comprar o item \"📌 | Foto pequena「Perfil」\" antes de poder utilizá-lo.");
+            interaction.editReply("Você precisa comprar o item \"📌 | Foto pequena「Perfil」\" antes de poder utilizá-lo.");
             return;
         }
 
         // Verificar se o usuário possui o item "📌 | Foto grande「Perfil」"
         const temFotoGrande = obterCompras(userId).includes("📌 | Foto grande「Perfil」");
         if (!temFotoGrande && bigImage) {
-            interaction.reply("Você precisa comprar o item \"📌 | Foto grande「Perfil」\" antes de poder utilizá-lo.");
+            interaction.editReply("Você precisa comprar o item \"📌 | Foto grande「Perfil」\" antes de poder utilizá-lo.");
             return;
         }
 
         // Salvar os dados de personalização do perfil
         salvarDadosPerfil(userId, aboutMe, emoji, embedColor, smallImage, bigImage);
 
-        interaction.reply("Seu perfil foi personalizado com sucesso!");
+        interaction.editReply("Seu perfil foi personalizado com sucesso!")}, 3500)
+    })
     }
 }

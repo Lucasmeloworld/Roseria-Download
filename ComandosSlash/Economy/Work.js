@@ -41,7 +41,7 @@ function atualizarCompra(usuarioId, item) {
 
 module.exports = {
     name: "work",
-    description: "Trabalhe para ganhar dinheiro",
+    description: "[Economia] Trabalhe para ganhar dinheiro",
     type: Discord.ApplicationCommandType.ChatInput,
     cooldowns: new Map(),
 
@@ -68,7 +68,7 @@ module.exports = {
 
         // Verificar se o usuário possui a maleta da sorte com o multiplicador
         const compras = obterCompras(userId);
-        const multiplicador = compras.includes("💼 | Maleta da sorte「Multiplicador」") ? 0.5 : 1;
+        const multiplicador = compras.includes("⏳ | Hora extra") ? 2 : 1;
 
         // Simular um trabalho e gerar um valor aleatório
         const amount = Math.floor(Math.random() * 500) + 1;
@@ -76,8 +76,19 @@ module.exports = {
         // Calcular o valor final considerando o multiplicador
         const finalAmount = Math.floor(amount * multiplicador);
 
-        // Atualizar o saldo do usuário e registrar a compra
-        atualizarCompra(userId, { name: "Salário", price: finalAmount });
+        // Verificar se o usuário já existe na tabela antes de inserir um novo registro
+        const checkUserQuery = db.prepare('SELECT user_id FROM users WHERE user_id = ?');
+        const userExists = checkUserQuery.get(userId);
+
+        if (userExists) {
+            // Atualizar o saldo do usuário existente
+            const updateBalanceQuery = db.prepare('UPDATE users SET balance = balance + ? WHERE user_id = ?');
+            updateBalanceQuery.run(finalAmount, userId);
+        } else {
+            // Inserir um novo registro para o usuário
+            const insertUserQuery = db.prepare('INSERT INTO users (user_id, balance) VALUES (?, ?)');
+            insertUserQuery.run(userId, finalAmount);
+        }
 
         // Definir o tempo de cooldown para o usuário
         const cooldownEnd = Date.now() + cooldownDuration;
@@ -85,10 +96,10 @@ module.exports = {
 
         // Mensagens aleatórias de sucesso
         const successMessages = [
-            `💰 | Ótimo trabalho! Você ganhou \`${finalAmount}\` moedas.`,
-            `💵 | Incrível! Você ganhou \`${finalAmount}\` moedas pelo seu trabalho.`,
-            `🤑 | Parabéns! Você ganhou \`${finalAmount}\` moedas!`,
-            `🌟 | Bom trabalho! Você ganhou \`${finalAmount}\` moedas pelo seu esforço.`,
+            `💰 | Ótimo trabalho! Você ganhou \`${finalAmount}\` Ncoins.`,
+            `💵 | Incrível! Você ganhou \`${finalAmount}\` Ncoins pelo seu trabalho.`,
+            `🤑 | Parabéns! Você ganhou \`${finalAmount}\` Ncoins!`,
+            `🌟 | Bom trabalho! Você ganhou \`${finalAmount}\` Ncoins pelo seu esforço.`,
         ];
 
         // Selecionar uma mensagem aleatória
@@ -99,7 +110,7 @@ module.exports = {
         let embedSuccess = new Discord.EmbedBuilder()
             .setTitle("✅ | Trabalho concluído!")
             .setDescription(successMessage)
-            .setColor("#00ff00");
+            .setColor('Green');
 
         interaction.reply({ embeds: [embedSuccess] });
     },

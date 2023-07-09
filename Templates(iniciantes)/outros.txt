@@ -1,0 +1,36 @@
+Botão de LINK
+
+const b1 = new dc.ButtonBuilder()
+        .setLabel(``)
+        .setEmoji('')
+        .setStyle(5)
+        .setURL(``)
+
+===================================================================================
+Botão
+
+ const button = new Discord.ActionRowBuilder()
+            .addComponents(
+                new Discord.ButtonBuilder()
+                    .setCustomId('1')
+                    .setLabel('')
+                    .setEmoji
+                    .setStyle(Discord.ButtonStyle.Primary)
+                    .setDisabled(false)
+
+            )
+
+====================================================================================
+resposta aleatoria
+
+    run: async (client, interaction) => {
+      var Name = [
+        '',
+
+      ]
+      var random1 = Name[Math.floor(Math.random() * Name.length)];
+
+ const texto = interaction.options.getString('texto');
+
+
+

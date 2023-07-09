@@ -1,0 +1,15 @@
+        let embed= new Discord.EmbedBuilder()   
+        .setTitle()
+        .setDescription()
+        .setColor()
+        .setThumbnail()
+        .setImage()
+        .addfields(
+
+                {
+                name: ``,
+                value: ``,
+                inline: false
+            },
+
+        )

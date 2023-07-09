@@ -83,8 +83,8 @@ function obterItensDisponiveis() {
         { name: '🎁 | Presente Misterioso「limitado」', price: 500 },
         { name: '💼 | Maleta da sorte「Multiplicador」', price: 5000 },
         { name: '✨ | Estrelas do desejo「Multiplicador」', price: 6500 },
-        { name: '💳 | Cartão RoseBank Plus「Compras」', price: 2000 },
-        { name: '💠 | Emoji decorativo「Perfil」', price: 500 },
+        { name: '💳 | Cartão EzBank Plus「Compras」', price: 2000 },
+        { name: '💠 | Emojis decorativos「Perfil」', price: 500 },
         { name:'📌 | Foto grande「Perfil」', price: 700},
         { name:'📌 | Foto pequena「Perfil」', price: 400 },
         { name:'🎀 | Fita colorida「Perfil」', price: 650 },
@@ -94,7 +94,7 @@ function obterItensDisponiveis() {
 // COMANDO DE COMPRA
 module.exports = {
     name: "comprar",
-    description: "Compra um item da loja",
+    description: "[Economia] Compre um item da loja",
     type: Discord.ApplicationCommandType.ChatInput,
     options: [
         {
@@ -147,7 +147,7 @@ module.exports = {
         // Enviar a resposta ao usuário
         const buyedItem = new Discord.EmbedBuilder()
             .setTitle(`🛒 | Compra concluída.`)
-            .setDescription(`Você comprou o item "${itemName}" por \`${item.price.toLocaleString()} RoseCoins\`.`)
+            .setDescription(`Você comprou o item "${itemName}" por \`${item.price.toLocaleString()} Coins\`.`)
             .setColor('Green')
         interaction.reply({ embeds: [buyedItem] });
     },

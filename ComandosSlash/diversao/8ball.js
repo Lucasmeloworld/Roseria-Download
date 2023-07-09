@@ -1,4 +1,5 @@
-const Discord = require('discord.js')
+const Discord = require('discord.js');
+const { intersect, randomInt } = require('mathjs');
 const stringSimilarity = require('string-similarity')
 
 module.exports = {
@@ -46,23 +47,12 @@ module.exports = {
             'Meu processador não consegue computar isso 🤡',
             'EI! Pergunte outras coisa!'
             ];
+            var random1 = Resposta1[Math.floor(Math.random() * Resposta1.length)];
 
-  //Resposta do sim ou não
-      var random1 = Resposta1[Math.floor(Math.random() * Resposta1.length)];
-        var Resposta2 = [
-          'Sim',
-          'Não',
-          'Eu não quero responder isso.'
-        ]
-      var random2 = Resposta2[Math.floor(Math.random() * Resposta2.length)];
-      
-      if (stringSimilarity.compareTwoStrings(texto,'sim ou nao') > 0.5) {
-        interaction.reply({ content: random2 });
-      }
-
-      else{
-      interaction.reply({ content: random1 })}
+      interaction.reply('✨ | pensando na resposta...').then(()=>{
+        setTimeout(()=> interaction.editReply(random1), 2000)
+      })
     
       }
-  }
 
+    }

@@ -17,7 +17,7 @@ module.exports = db;
 // COMANDO DE PAGAMENTO
 module.exports = {
     name: "pagar",
-    description: "Pague outro usuário",
+    description: "[Economia] Pague outro usuário",
     type: Discord.ApplicationCommandType.ChatInput,
     options: [
         {

@@ -1,6 +1,7 @@
 const client = require("../../index");
 
 client.on("ready", () =>{
+  
   console.log(`✨ Dispoível. Logada em ${client.user.tag}`)
 
 })
@@ -8,8 +9,10 @@ const Discord = require("discord.js");
 
 
 client.on("ready", () =>{
-let gatewayPing = client.ws.ping;
-let Djs = Discord.version
+
+//let Canal = client.channels.cache.get('Seu_Canal')
+
+
 
 let status = new Discord.EmbedBuilder()   
         .setTitle('Status atual')
@@ -26,14 +29,14 @@ let status = new Discord.EmbedBuilder()
           
           {
             name: "📚 | Versão:",
-            value: "`7.0 - Atualizada`",
+            value: "`8.0.1 - Atualizada`",
             inline: false
         },
 
         
         {
           name: `📜 | Script Version`,
-          value: `\`Discord.js, Version ${Djs}\``,
+          value: `\`Discord.js, Version ${Discord.version}\``,
           inline: false
       },
       
@@ -46,9 +49,8 @@ let status = new Discord.EmbedBuilder()
 
         )
 
-          Canal.send({ embeds: [status] })
-
-
+          //Canal.send({ embeds: [status] })
+          //Remova "//" caso queira que envie uma mensagem em um canal especifico ao ligar.
 })
 
 

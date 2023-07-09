@@ -64,7 +64,7 @@ function atualizarCompra(usuarioId, item) {
 // COMANDO DE INVENTÁRIO
 module.exports = {
     name: "inventario",
-    description: "Mostra os itens comprados pelo usuário",
+    description: "[Economia] Mostra os itens comprados pelo usuário",
     type: Discord.ApplicationCommandType.ChatInput,
     options: [
         {

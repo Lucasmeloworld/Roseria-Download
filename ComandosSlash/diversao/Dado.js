@@ -27,9 +27,10 @@ module.exports = {
             .setColor('Blue')
             .setImage("https://media.tenor.com/CuHx_i0bNfUAAAAC/yelan-genshin-genshin-impact.gif")
 
-            interaction.reply("🎲 | Girando o Dado...")
+            interaction.reply("🎲 | Girando o Dado...").then(()=>{
+              setTimeout(()=> interaction.editReply(`🎲 | ${random1}`) , 2000)
+            })
 
-    interaction.reply({embeds: [embed]})
     
     
 

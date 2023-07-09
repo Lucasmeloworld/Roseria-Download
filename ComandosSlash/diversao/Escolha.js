@@ -36,7 +36,9 @@ let item2 = interaction.options.getString("item2")
           ]
           var random1 = escolha[Math.floor(Math.random() * escolha.length)];
 
-    interaction.reply({content:`eu escolho... **"${random1}"**!`});
+    interaction.reply(`👀 | Escolhendo...`).then(()=>{
+        setTimeout(()=> interaction.editReply(`eu escolho... **"${random1}"**!`) , 2000)
+      })
 
     }
 } 

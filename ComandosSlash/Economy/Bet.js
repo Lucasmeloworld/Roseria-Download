@@ -17,7 +17,7 @@ module.exports = db;
 // COMANDO DE APOSTA
 module.exports = {
     name: "apostar",
-    description: "Faça uma aposta",
+    description: "[Economia] Faça uma aposta",
     type: Discord.ApplicationCommandType.ChatInput,
     run: async (client, interaction) => {
         const userId = interaction.user.id;

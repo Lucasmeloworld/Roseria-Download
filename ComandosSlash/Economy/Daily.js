@@ -80,7 +80,7 @@ function formatTime(time) {
 
 module.exports = {
     name: "daily",
-    description: "Recebe uma quantia diária aleatória de dinheiro",
+    description: "[Economia] Recebe uma quantia diária aleatória de dinheiro",
     type: Discord.ApplicationCommandType.ChatInput,
     run: async (client, interaction) => {
         const userId = interaction.user.id;
