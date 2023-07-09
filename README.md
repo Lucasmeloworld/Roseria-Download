@@ -17,3 +17,10 @@ Ban, Kick, Mute, unBan, unMute
 Calculadora, invite, mensagem, say, sayEmbed
 ### Perfil
 ProfileSettings, ViewProfile
+# Contato:
+## lucasmeloworld (Discord) 
+## Suporte Roseria (Servidor de Discord)
+https://discord.gg/gJ4BYhTPBN
+# Achou algum erro? Me contate ou abra uma Issue!
+## Roseria, um BOT brasileiro.
+
