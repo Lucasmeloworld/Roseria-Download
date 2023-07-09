@@ -1,4 +1,5 @@
 # Roseria, a Wonderfull BOT!
+### Versão 8.0.1 (Git Hub)
 ### Baixe os arquivos da Roseria e faça Self-Host!
 A jornada foi maravilhosa enquanto durou. Lhe vejo no futuro novamente. 😉
 # Comandos incluidos:
