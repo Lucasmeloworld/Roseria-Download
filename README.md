@@ -1,5 +1,9 @@
 # Roseria, a Wonderfull BOT!
 ### Versão 8.0.1 (Git Hub)
+Discord.js V14
+
+## É necessario Node.js V18.16.1(LTS) e Python para a Execução!
+
 ### Baixe os arquivos da Roseria e faça Self-Host!
 A jornada foi maravilhosa enquanto durou. Lhe vejo no futuro novamente. 😉
 # Comandos incluidos:
